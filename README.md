@@ -1,1 +1,1 @@
-# tgsc-web
+Live bits at https://tgsc-web.azurewebsites.net.
