@@ -2,33 +2,33 @@ import React, { Component } from 'react';
 import axios from "axios";
 import './App.css';
 
-import ContactList from "./ContactList";
+import CourseList from "./CourseList";
 
 
 class App extends Component {
 
   state = {
-    contacts: []
+    courses: []
   };
 
   componentDidMount() {
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("https://tgsc-api.azurewebsites.net/api/course")
       .then(response => {
 
-        // create an array of contacts only with relevant data
-        const newContacts = response.data.map(c => {
+        // create an array of courses only with relevant data
+        const newCourses = response.data.map(c => {
           return {
-            id: c.id,
+            id: c.name,
             name: c.name,
-            email: c.email
+            url: c.url
           };
         });
 
         // create a new "State" object without mutating 
         // the original State object. 
         const newState = Object.assign({}, this.state, {
-          contacts: newContacts
+          courses: newCourses
         });
 
         // store the new state object in the component's state
@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <ContactList contacts={this.state.contacts} />
+          <CourseList courses={this.state.courses} />
         </header>
 
       </div>
