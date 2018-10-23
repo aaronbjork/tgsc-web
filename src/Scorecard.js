@@ -5,14 +5,14 @@ class Scorecard extends Component {
   render() {
     return (
       <div className="Scorecard">
-        {this.state.greeting} {this.props.name}!
+        {this.state.greeting} {this.props.name} {this.state.greeting}
       </div>
     );
   }
 
   constructor(props) {
     super(props);
-    this.state = { greeting: 'You made it' };
+    this.state = { greeting: '** ' };
 
   }
 
