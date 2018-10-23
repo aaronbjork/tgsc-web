@@ -12,7 +12,7 @@ class Scorecard extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { greeting: 'Hello' };
+    this.state = { greeting: 'You made it' };
 
   }
 
