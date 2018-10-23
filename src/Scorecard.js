@@ -12,7 +12,7 @@ class Scorecard extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { greeting: '** ' };
+    this.state = { greeting: '* ' };
 
   }
 
@@ -21,7 +21,7 @@ class Scorecard extends Component {
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
-
+      
 
   }
 }
