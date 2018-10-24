@@ -40,6 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        These are courses:
         <header className="App-header">
           <CourseList courses={this.state.courses} />
         </header>
