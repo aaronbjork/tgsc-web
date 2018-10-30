@@ -1,14 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types"
+import TeeBox from "./TeeBox.js";
 
 function Course(props) {
   return (
-    <div>{props.name}</div>
+    <div>
+      <b>{props.name}, {props.id}</b>
+
+      
+    </div>
+
   );
 }
 
 Course.propTypes = {
-    name: PropTypes.string.isRequired
+    id: PropTypes.number,
+    name: PropTypes.string.isRequired,
+    teeBoxes: PropTypes.array
   };
 
 export default Course;

@@ -1,13 +1,13 @@
 import React from "react";
 
 // import the Contact component
-import Contact from "./Course";
+import Course from "./Course";
 
 function CourseList(props) {
     return (
       <div>
-        {props.courses.map(c => <Contact key={c.name} name={c.name} url={c.url} />)}
-       </div> 
+        {props.courses.map(c => <Course key={c.id} id={c.id} name={c.name} teeBoxes={c.teeBoxes} />)}
+      </div> 
     ); 
   } 
 

@@ -19,9 +19,9 @@ class App extends Component {
         // create an array of courses only with relevant data
         const newCourses = response.data.map(c => {
           return {
-            id: c.name,
+            id: c.id,
             name: c.name,
-            url: c.url
+            teeBoxes: c.teeBoxes
           };
         });
 
@@ -40,7 +40,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        These are courses:
         <header className="App-header">
           <CourseList courses={this.state.courses} />
         </header>
