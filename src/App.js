@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import './App.css';
-
 import CourseList from "./CourseList";
 
 
@@ -16,8 +15,8 @@ class App extends Component {
       .get("https://tgsc-api.azurewebsites.net/api/course")
       .then(response => {
 
-        // create an array of courses only with relevant data
-        const newCourses = response.data.map(c => {
+        // Create an array of courses only with relevant data
+        const coursesList = response.data.map(c => {
           return {
             id: c.id,
             name: c.name,
@@ -25,13 +24,13 @@ class App extends Component {
           };
         });
 
-        // create a new "State" object without mutating 
+        // Create a new "State" object without mutating 
         // the original State object. 
         const newState = Object.assign({}, this.state, {
-          courses: newCourses
+          courses: coursesList
         });
 
-        // store the new state object in the component's state
+        // Store the new state object in the component's state
         this.setState(newState);
       })
       .catch(error => console.log(error));
