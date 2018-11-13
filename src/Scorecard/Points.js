@@ -1,6 +1,6 @@
 import React from "react";
 
-class LeaderboardDay extends React.Component {
+class Points extends React.Component {
   render() {
     return (
       <td>{this.props.points}</td>
@@ -8,4 +8,4 @@ class LeaderboardDay extends React.Component {
   }
 }
 
-export default LeaderboardDay;
+export default Points;

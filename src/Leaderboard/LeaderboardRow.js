@@ -1,5 +1,5 @@
 import React from "react";
-import LeaderboardDay from "./LeaderboardDay.js";
+import LeaderboardRound from "./LeaderboardRound.js";
 
 class LeaderboardRow extends React.Component {
   render() {
@@ -8,7 +8,9 @@ class LeaderboardRow extends React.Component {
         <td>{this.props.position}</td> 
         <td>{this.props.name}</td>
         {this.props.days.map(d => (
-          <LeaderboardDay key={d.day} day={d.day} points={d.points} />
+          <LeaderboardRound key={d.day} 
+                  day={d.day} 
+                  points={d.points} />
           ))
         }
         <td><b>{this.props.points}</b></td>

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import LeaderboardRow from "./LeaderboardRow.js";
-import LeaderboardRowHdr from "./LeaderboardRowHdr.js";
+import LeaderboardRoundHeader from "./LeaderboardRoundHeader.js";
 
 class Leaderboard extends React.Component {
   state = {
@@ -11,7 +11,7 @@ class Leaderboard extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://tgsc-api.azurewebsites.net/api/event/13/leaderboard")
+      .get("https://tgsc-api.azurewebsites.net/api/events/13/leaderboard")
       .then(response => {
 
         // Create an array with only the data we need for 
@@ -59,28 +59,25 @@ class Leaderboard extends React.Component {
               <th>Pos</th>
               <th>Name</th>
               {this.state.days.map(d => (
-                <LeaderboardRowHdr key={d.day} name={d.label}  />
+                <LeaderboardRoundHeader key={d.day} 
+                                name={d.label}  />
                 ))
               }             
 
               <th>Total</th>
             </tr>
               {this.state.rows.map(r => (
-                <LeaderboardRow key={r.id} name={r.name} position={r.position} points={r.points} days={r.days} />
+                <LeaderboardRow key={r.id} 
+                        name={r.name} 
+                        position={r.position} 
+                        points={r.points} 
+                        days={r.days} />
                 ))
               }
           </tbody>
         </table>
       </div> 
     );
-  }
-
-  renderHeader(cols) {
-      for (var i = 1; i < cols + 1; i++) {
-        return (
-          <td>{i}</td>
-        )
-      }                 
   }
 }
 
